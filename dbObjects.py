@@ -107,9 +107,11 @@ class Position():
         '''Считает итоговую зарплату'''
         return self.rate * worked_hours
 
+
 class PositionFactory():
     ''' Фабрика легковесов - решает, когда нужно создать новый легковес, а когда можно обойтись существующим.'''
     positions = {}
+
     def get_Position(self, name, rate, description):
         if name in self.positions.keys():
             # Если такая должность уже существует, веернуть её
@@ -121,7 +123,6 @@ class PositionFactory():
             self.positions[name] = position
             print(f'Создана должность {name}')
             return self.positions[name]
-
 
 
 if __name__ == '__main__':
